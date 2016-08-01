@@ -23,6 +23,12 @@
 		56BEFF5C1B68CE58006F0664 /* NSEntityDescription_Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BEFF521B68CE58006F0664 /* NSEntityDescription_Service.swift */; };
 		56BEFF5D1B68CE58006F0664 /* NSFetchRequest_Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BEFF531B68CE58006F0664 /* NSFetchRequest_Service.swift */; };
 		56BEFF611B68CE58006F0664 /* NamedEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BEFF581B68CE58006F0664 /* NamedEntity.swift */; };
+		F1255E381D4E9D8B00ED074C /* FeedingProgramController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1255E371D4E9D8B00ED074C /* FeedingProgramController.swift */; };
+		F1255E3A1D4EA95300ED074C /* addProgramModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1255E391D4EA95300ED074C /* addProgramModalController.swift */; };
+		F1255E3C1D4ED18B00ED074C /* locationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1255E3B1D4ED18B00ED074C /* locationsViewController.swift */; };
+		F1255E3E1D4ED31300ED074C /* addLocationModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1255E3D1D4ED31300ED074C /* addLocationModalViewController.swift */; };
+		F1255E401D4ED90100ED074C /* kidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1255E3F1D4ED90100ED074C /* kidsViewController.swift */; };
+		F1255E441D4EDF2C00ED074C /* addKidModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1255E431D4EDF2C00ED074C /* addKidModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +107,12 @@
 		56BEFF521B68CE58006F0664 /* NSEntityDescription_Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSEntityDescription_Service.swift; sourceTree = "<group>"; };
 		56BEFF531B68CE58006F0664 /* NSFetchRequest_Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFetchRequest_Service.swift; sourceTree = "<group>"; };
 		56BEFF581B68CE58006F0664 /* NamedEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedEntity.swift; sourceTree = "<group>"; };
+		F1255E371D4E9D8B00ED074C /* FeedingProgramController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingProgramController.swift; sourceTree = "<group>"; };
+		F1255E391D4EA95300ED074C /* addProgramModalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addProgramModalController.swift; sourceTree = "<group>"; };
+		F1255E3B1D4ED18B00ED074C /* locationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = locationsViewController.swift; sourceTree = "<group>"; };
+		F1255E3D1D4ED31300ED074C /* addLocationModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addLocationModalViewController.swift; sourceTree = "<group>"; };
+		F1255E3F1D4ED90100ED074C /* kidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kidsViewController.swift; sourceTree = "<group>"; };
+		F1255E431D4EDF2C00ED074C /* addKidModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addKidModalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +230,12 @@
 			isa = PBXGroup;
 			children = (
 				562BB1371B55627000B73F46 /* AppDelegate.swift */,
+				F1255E371D4E9D8B00ED074C /* FeedingProgramController.swift */,
+				F1255E391D4EA95300ED074C /* addProgramModalController.swift */,
+				F1255E3B1D4ED18B00ED074C /* locationsViewController.swift */,
+				F1255E3D1D4ED31300ED074C /* addLocationModalViewController.swift */,
+				F1255E3F1D4ED90100ED074C /* kidsViewController.swift */,
+				F1255E431D4EDF2C00ED074C /* addKidModalViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -496,8 +514,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1255E3A1D4EA95300ED074C /* addProgramModalController.swift in Sources */,
 				562BB1381B55627000B73F46 /* AppDelegate.swift in Sources */,
+				F1255E381D4E9D8B00ED074C /* FeedingProgramController.swift in Sources */,
+				F1255E401D4ED90100ED074C /* kidsViewController.swift in Sources */,
+				F1255E3C1D4ED18B00ED074C /* locationsViewController.swift in Sources */,
 				56BEFEBE1B68C3E0006F0664 /* Model.xcdatamodeld in Sources */,
+				F1255E3E1D4ED31300ED074C /* addLocationModalViewController.swift in Sources */,
+				F1255E441D4EDF2C00ED074C /* addKidModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -858,6 +882,7 @@
 				564F70AC1BEABDA3009D186E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56BEFF461B68CE0A006F0664 /* Build configuration list for PBXNativeTarget "CoreDataService" */ = {
 			isa = XCConfigurationList;
