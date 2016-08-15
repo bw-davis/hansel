@@ -16,9 +16,6 @@ class FeedingProgramController: UIViewController, UITableViewDataSource, NSFetch
     @IBAction func programModalCancelled(sender: UIStoryboardSegue) {
         // Intentionally left blank
     }
-    @IBAction func programModalFinished(sender: UIStoryboardSegue) {
-        // Intentionally left blank
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,5 +38,18 @@ class FeedingProgramController: UIViewController, UITableViewDataSource, NSFetch
         cell.textLabel?.text = program.name
         
         return cell
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "LocationListSegue" {
+            if let indexPath = tableViewOutlet.indexPathForSelectedRow, let selectedFeedingProgram = fetchedResultsController?.objectAtIndexPath(indexPath) as? FeedingProgram {
+                let locationListViewController = segue.destinationViewController as! locationsViewController
+                locationListViewController.selectedFeedingProgram = selectedFeedingProgram
+                
+                tableViewOutlet.deselectRowAtIndexPath(indexPath, animated: true)
+            }
+        }
+    }
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        tableViewOutlet.reloadData()
     }
 }

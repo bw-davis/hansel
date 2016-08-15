@@ -15,12 +15,14 @@ import CoreData
 extension Kid {
 
     @NSManaged var height: NSNumber?
-    @NSManaged var name: String?
+    @NSManaged var firstName: String?
+    @NSManaged var lastName: String?
     @NSManaged var notes: String?
     @NSManaged var weight: NSNumber?
     @NSManaged var age: NSNumber?
-    @NSManaged var feedingRecord: FeedingRecord?
-    @NSManaged var firstPhoto: Photo?
-    @NSManaged var latestPhoto: Photo?
+    @NSManaged var feedingRecord: NSSet?
+    @NSManaged var firstPhoto: NSManagedObject?
+    @NSManaged var latestPhoto: NSManagedObject?
+    @NSManaged var location: NSManagedObject?
 
 }

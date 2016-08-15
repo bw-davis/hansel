@@ -10,12 +10,7 @@ import Foundation
 import CoreData
 import CoreDataService
 
-class Location: NSManagedObject {
-    
-}
-
-extension Location: NamedEntity {
-    // MARK: Properties (Class, NamedEntity)
+class Location: NSManagedObject, NamedEntity {
     class var entityName: String {
         get {
             return "Location"

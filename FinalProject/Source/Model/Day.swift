@@ -8,9 +8,10 @@
 
 import Foundation
 import CoreData
+import CoreDataService
 
 
-class Day: NSManagedObject {
+class Day: NSManagedObject, NamedEntity {
 
     class var entityName: String {
         get {

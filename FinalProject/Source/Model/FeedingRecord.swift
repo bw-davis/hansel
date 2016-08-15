@@ -8,10 +8,14 @@
 
 import Foundation
 import CoreData
+import CoreDataService
 
 
-class FeedingRecord: NSManagedObject {
+class FeedingRecord: NSManagedObject, NamedEntity {
 
-// Insert code here to add functionality to your managed object subclass
-    
+    class var entityName: String {
+        get {
+            return "Location"
+        }
+    }
 }

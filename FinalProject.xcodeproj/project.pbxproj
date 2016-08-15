@@ -29,6 +29,8 @@
 		F1255E3E1D4ED31300ED074C /* addLocationModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1255E3D1D4ED31300ED074C /* addLocationModalViewController.swift */; };
 		F1255E401D4ED90100ED074C /* kidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1255E3F1D4ED90100ED074C /* kidsViewController.swift */; };
 		F1255E441D4EDF2C00ED074C /* addKidModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1255E431D4EDF2C00ED074C /* addKidModalViewController.swift */; };
+		F1A5BB4B1D616EEC001928E0 /* addRecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A5BB4A1D616EEC001928E0 /* addRecordTableViewController.swift */; };
+		F1A5BB4D1D617D3C001928E0 /* FeedingRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A5BB4C1D617D3C001928E0 /* FeedingRecordService.swift */; };
 		F1B4CF431D54EE3D004AE796 /* Example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF411D54EE3D004AE796 /* Example.xcdatamodeld */; };
 		F1B4CF461D54FA42004AE796 /* FeedingProgramService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF451D54FA42004AE796 /* FeedingProgramService.swift */; };
 		F1B4CF491D564C05004AE796 /* addProgramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF481D564C05004AE796 /* addProgramTableViewCell.swift */; };
@@ -45,9 +47,9 @@
 		F1B4CF611D56807E004AE796 /* FeedingProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF551D56807E004AE796 /* FeedingProgram.swift */; };
 		F1B4CF621D56807E004AE796 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF561D56807E004AE796 /* Location+CoreDataProperties.swift */; };
 		F1B4CF631D56807E004AE796 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF571D56807E004AE796 /* Location.swift */; };
-		F1B4CF651D56AA40004AE796 /* feedingProgramNamedEntityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF641D56AA40004AE796 /* feedingProgramNamedEntityExtension.swift */; };
 		F1B4CF671D57D6AD004AE796 /* AddLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF661D57D6AD004AE796 /* AddLocationService.swift */; };
 		F1B4CF691D57EF8F004AE796 /* AddKidService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF681D57EF8F004AE796 /* AddKidService.swift */; };
+		F1B4CF6B1D5AD690004AE796 /* kidDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF6A1D5AD690004AE796 /* kidDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,8 @@
 		F1255E3D1D4ED31300ED074C /* addLocationModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addLocationModalViewController.swift; sourceTree = "<group>"; };
 		F1255E3F1D4ED90100ED074C /* kidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kidsViewController.swift; sourceTree = "<group>"; };
 		F1255E431D4EDF2C00ED074C /* addKidModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addKidModalViewController.swift; sourceTree = "<group>"; };
+		F1A5BB4A1D616EEC001928E0 /* addRecordTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addRecordTableViewController.swift; sourceTree = "<group>"; };
+		F1A5BB4C1D617D3C001928E0 /* FeedingRecordService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingRecordService.swift; sourceTree = "<group>"; };
 		F1B4CF421D54EE3D004AE796 /* Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Example.xcdatamodel; sourceTree = "<group>"; };
 		F1B4CF451D54FA42004AE796 /* FeedingProgramService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingProgramService.swift; sourceTree = "<group>"; };
 		F1B4CF481D564C05004AE796 /* addProgramTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addProgramTableViewCell.swift; sourceTree = "<group>"; };
@@ -148,9 +152,9 @@
 		F1B4CF551D56807E004AE796 /* FeedingProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingProgram.swift; sourceTree = "<group>"; };
 		F1B4CF561D56807E004AE796 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F1B4CF571D56807E004AE796 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		F1B4CF641D56AA40004AE796 /* feedingProgramNamedEntityExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = feedingProgramNamedEntityExtension.swift; sourceTree = "<group>"; };
 		F1B4CF661D57D6AD004AE796 /* AddLocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLocationService.swift; sourceTree = "<group>"; };
 		F1B4CF681D57EF8F004AE796 /* AddKidService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddKidService.swift; sourceTree = "<group>"; };
+		F1B4CF6A1D5AD690004AE796 /* kidDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kidDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +282,8 @@
 				F1255E3D1D4ED31300ED074C /* addLocationModalViewController.swift */,
 				F1255E3F1D4ED90100ED074C /* kidsViewController.swift */,
 				F1255E431D4EDF2C00ED074C /* addKidModalViewController.swift */,
+				F1B4CF6A1D5AD690004AE796 /* kidDetailViewController.swift */,
+				F1A5BB4A1D616EEC001928E0 /* addRecordTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -368,7 +374,6 @@
 				F1B4CF551D56807E004AE796 /* FeedingProgram.swift */,
 				F1B4CF561D56807E004AE796 /* Location+CoreDataProperties.swift */,
 				F1B4CF571D56807E004AE796 /* Location.swift */,
-				F1B4CF641D56AA40004AE796 /* feedingProgramNamedEntityExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				F1B4CF451D54FA42004AE796 /* FeedingProgramService.swift */,
 				F1B4CF661D57D6AD004AE796 /* AddLocationService.swift */,
 				F1B4CF681D57EF8F004AE796 /* AddKidService.swift */,
+				F1A5BB4C1D617D3C001928E0 /* FeedingRecordService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -595,7 +601,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1B4CF651D56AA40004AE796 /* feedingProgramNamedEntityExtension.swift in Sources */,
+				F1A5BB4B1D616EEC001928E0 /* addRecordTableViewController.swift in Sources */,
 				F1B4CF5C1D56807E004AE796 /* Photo+CoreDataProperties.swift in Sources */,
 				F1B4CF431D54EE3D004AE796 /* Example.xcdatamodeld in Sources */,
 				F1B4CF461D54FA42004AE796 /* FeedingProgramService.swift in Sources */,
@@ -613,6 +619,7 @@
 				F1255E381D4E9D8B00ED074C /* FeedingProgramController.swift in Sources */,
 				F1B4CF5F1D56807E004AE796 /* Kid.swift in Sources */,
 				F1B4CF621D56807E004AE796 /* Location+CoreDataProperties.swift in Sources */,
+				F1A5BB4D1D617D3C001928E0 /* FeedingRecordService.swift in Sources */,
 				F1255E401D4ED90100ED074C /* kidsViewController.swift in Sources */,
 				F1B4CF581D56807E004AE796 /* Day+CoreDataProperties.swift in Sources */,
 				F1B4CF4B1D5677F2004AE796 /* addKidTableViewCell.swift in Sources */,
@@ -621,6 +628,7 @@
 				56BEFEBE1B68C3E0006F0664 /* Model.xcdatamodeld in Sources */,
 				F1255E3E1D4ED31300ED074C /* addLocationModalViewController.swift in Sources */,
 				F1B4CF5B1D56807E004AE796 /* FeedingRecord.swift in Sources */,
+				F1B4CF6B1D5AD690004AE796 /* kidDetailViewController.swift in Sources */,
 				F1255E441D4EDF2C00ED074C /* addKidModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

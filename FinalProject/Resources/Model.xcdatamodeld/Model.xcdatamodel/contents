@@ -2,7 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Xcode 4.3">
     <entity name="Day" representedClassName=".Day" syncable="YES">
         <attribute name="dateTime" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="feedingRecords" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FeedingRecord" inverseName="day" inverseEntity="FeedingRecord" syncable="YES"/>
+        <relationship name="feedingRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FeedingRecord" inverseName="day" inverseEntity="FeedingRecord" syncable="YES"/>
     </entity>
     <entity name="FeedingProgram" representedClassName=".FeedingProgram" syncable="YES">
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,28 +10,32 @@
         <relationship name="locations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Location" inverseName="feedingProgram" inverseEntity="Location" syncable="YES"/>
     </entity>
     <entity name="FeedingRecord" representedClassName=".FeedingRecord" syncable="YES">
+        <attribute name="timeDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="day" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Day" inverseName="feedingRecords" inverseEntity="Day" syncable="YES"/>
-        <relationship name="kid" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Kid" inverseName="feedingRecord" inverseEntity="Kid" syncable="YES"/>
+        <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="feedingRecords" inverseEntity="Day" syncable="YES"/>
+        <relationship name="kid" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Kid" inverseName="feedingRecord" inverseEntity="Kid" syncable="YES"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="feedingRecord" inverseEntity="Location" syncable="YES"/>
         <relationship name="photo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="feedingRecord" inverseEntity="Photo" syncable="YES"/>
     </entity>
     <entity name="Kid" representedClassName=".Kid" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="height" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
-        <relationship name="feedingRecord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FeedingRecord" inverseName="kid" inverseEntity="FeedingRecord" syncable="YES"/>
-        <relationship name="firstPhoto" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="kidFirst" inverseEntity="Photo" syncable="YES"/>
-        <relationship name="latestPhoto" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="kidLatest" inverseEntity="Photo" syncable="YES"/>
+        <relationship name="feedingRecord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FeedingRecord" inverseName="kid" inverseEntity="FeedingRecord" syncable="YES"/>
+        <relationship name="firstPhoto" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="kidFirst" inverseEntity="Photo" storedInTruthFile="YES" syncable="YES"/>
+        <relationship name="latestPhoto" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="kidLatest" inverseEntity="Photo" storedInTruthFile="YES" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="kid" inverseEntity="Location" syncable="YES"/>
     </entity>
     <entity name="Location" representedClassName=".Location" syncable="YES">
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="feedingProgram" maxCount="1" deletionRule="Nullify" destinationEntity="FeedingProgram" inverseName="locations" inverseEntity="FeedingProgram" syncable="YES"/>
-        <relationship name="feedingRecord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FeedingRecord" inverseName="location" inverseEntity="FeedingRecord" syncable="YES"/>
+        <relationship name="feedingProgram" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FeedingProgram" inverseName="locations" inverseEntity="FeedingProgram" syncable="YES"/>
+        <relationship name="feedingRecord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FeedingRecord" inverseName="location" inverseEntity="FeedingRecord" syncable="YES"/>
+        <relationship name="kid" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Kid" inverseName="location" inverseEntity="Kid" syncable="YES"/>
     </entity>
     <entity name="Photo" representedClassName=".Photo" syncable="YES">
         <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -40,11 +44,11 @@
         <relationship name="kidLatest" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Kid" inverseName="latestPhoto" inverseEntity="Kid" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Location" positionX="-63" positionY="-45" width="128" height="120"/>
-        <element name="Kid" positionX="-54" positionY="-45" width="128" height="165"/>
-        <element name="FeedingProgram" positionX="-36" positionY="18" width="128" height="90"/>
         <element name="Day" positionX="-18" positionY="27" width="128" height="75"/>
-        <element name="FeedingRecord" positionX="0" positionY="36" width="128" height="120"/>
+        <element name="FeedingProgram" positionX="-36" positionY="18" width="128" height="90"/>
+        <element name="FeedingRecord" positionX="0" positionY="36" width="128" height="135"/>
+        <element name="Kid" positionX="-54" positionY="-45" width="128" height="195"/>
+        <element name="Location" positionX="-63" positionY="-45" width="128" height="135"/>
         <element name="Photo" positionX="18" positionY="54" width="128" height="105"/>
     </elements>
 </model>

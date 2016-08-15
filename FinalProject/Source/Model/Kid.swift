@@ -11,11 +11,7 @@ import CoreData
 import CoreDataService
 
 
-class Kid: NSManagedObject {
-
-
-}
-extension Kid: NamedEntity {
+class Kid: NSManagedObject, NamedEntity {
     // MARK: Properties (Class, NamedEntity)
     class var entityName: String {
         get {

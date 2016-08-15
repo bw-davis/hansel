@@ -17,7 +17,8 @@ extension Location {
     @NSManaged var name: String?
     @NSManaged var latitude: NSNumber?
     @NSManaged var longitude: NSNumber?
-    @NSManaged var feedingProgram: FeedingProgram?
-    @NSManaged var feedingRecord: FeedingRecord?
+    @NSManaged var feedingProgram: NSManagedObject?
+    @NSManaged var feedingRecord: NSSet?
+    @NSManaged var kid: NSSet?
 
 }

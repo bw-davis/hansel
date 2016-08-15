@@ -8,9 +8,10 @@
 
 import Foundation
 import CoreData
+import CoreDataService
 
 
-class Photo: NSManagedObject {
+class Photo: NSManagedObject, NamedEntity {
 
     class var entityName: String {
         get {

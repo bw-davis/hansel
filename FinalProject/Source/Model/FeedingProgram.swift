@@ -8,8 +8,13 @@
 
 import Foundation
 import CoreData
+import CoreDataService
 
 
-class FeedingProgram: NSManagedObject {
-   
+class FeedingProgram: NSManagedObject, NamedEntity {
+    class var entityName: String {
+        get {
+            return "FeedingProgram"
+        }
+    }
 }

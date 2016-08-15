@@ -13,20 +13,26 @@ import CoreDataService
 
 class addProgramModalController: UITableViewController, UITextFieldDelegate {
     //@IBOutlet var addProgTableViewOutlet: UITableView!
-    
     private var name: String?
     private var country: String?
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var countryTextField: UITextField!
     @IBAction func saveButtonPressed(sender: UIBarButtonItem) {
-        let theName = name
-        let theCountry = country
+        guard let theName = name, theCountry = country else {
+            let alertController = UIAlertController(title: "Save Failed", message: "One or more fields are blank.", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) in
+                // Dismiss is automatic
+            }))
+            self.presentViewController(alertController, animated: true, completion: nil)
+            return
+        }
         do {
-            try FeedingProgramService.sharedProgramService.createFeedingProgram(theName!, country: theCountry!)
+            try FeedingProgramService.sharedProgramService.createFeedingProgram(theName, country: theCountry)
         }
         catch let error {
             fatalError("Failed to add FeedingProgram: \(error)")
         }
+        performSegueWithIdentifier("UnwindSegue", sender: self)
     }
     
     let caseArray: Array<Program> = [Program.Name, Program.Country]
@@ -39,6 +45,7 @@ class addProgramModalController: UITableViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+       
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
@@ -47,7 +54,6 @@ class addProgramModalController: UITableViewController, UITextFieldDelegate {
             if newName.isEmpty {
                     newName = "Feeding Program"
                 }
-            
             name = newName
         }
         else {
