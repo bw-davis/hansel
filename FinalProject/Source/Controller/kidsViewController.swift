@@ -24,28 +24,20 @@ class kidsViewController: UIViewController, UITableViewDataSource, NSFetchedResu
         super.viewDidLoad()
         
         setupResultsController()
-        
-        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if let someLocation = selectedLocation {
-            navigationItem.title = "\(someLocation.name!) Kids"
-            if let someKid = createdKid {
-                //print("The Locations name is: \(createdLocation?.name)")
-                //print("The Feeding Programs name is: \(selectedFeedingProgram!.name)")
-                someKid.location = someLocation
-            }
-        }
         if let selectedIndexPath = tableViewOutlet.indexPathForSelectedRow {
             tableViewOutlet.deselectRowAtIndexPath(selectedIndexPath, animated: false)
         }
     }
     private func setupResultsController() {
         if let someLocation = selectedLocation, let resultsController = KidService.sharedKidService.fetchedResultsControllerForKidsWithDelegate(self, location: someLocation) {
+            
             fetchedResultsController = resultsController
         }
         else {
+            print("Setting up the results controller didn't work...")
             fetchedResultsController = nil
         }
     }
@@ -59,10 +51,12 @@ class kidsViewController: UIViewController, UITableViewDataSource, NSFetchedResu
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("KidCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("KidCell", forIndexPath: indexPath) as! kidTableViewCell
         
         let kid = fetchedResultsController?.objectAtIndexPath(indexPath) as! Kid
-        cell.textLabel?.text = kid.firstName! + " " + kid.lastName!
+        cell.kidNameLabelOutlet?.text = " \(kid.firstName!)  \(kid.lastName!)"
+        let picture = kid.firstPhoto as! Photo
+        cell.kidImageOutlet?.image = UIImage(data: picture.data!, scale: 1.0)
         
         return cell
     }
@@ -74,6 +68,11 @@ class kidsViewController: UIViewController, UITableViewDataSource, NSFetchedResu
                 
                 tableViewOutlet.deselectRowAtIndexPath(indexPath, animated: true)
             }
+        }
+        else if segue.identifier == "AddKidSegue" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let addKidViewController = navigationController.topViewController as! addKidModalViewController
+            addKidViewController.selectedLocation = selectedLocation
         }
     }
     func controllerDidChangeContent(controller: NSFetchedResultsController) {

@@ -19,7 +19,7 @@ class KidService {
         if let someLocation = location {
            fetchRequest.predicate = NSPredicate(format: "location == %@", someLocation)
         }
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "firstName", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "lastName", ascending: true)]
         var resultsController: NSFetchedResultsController? = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataService.sharedCoreDataService.mainQueueContext, sectionNameKeyPath: nil, cacheName: nil)
         
         do {
@@ -34,7 +34,7 @@ class KidService {
         
     }
     
-    func createKid(name: String, lastName: String, age: Double, height: Double, weight: Double, picture: UIImage, completionHandler: SaveCompletionHandler) throws -> Kid {
+    func createKid(name: String, lastName: String, age: Double, height: Double, weight: Double, picture: UIImage?, location: Location, completionHandler: SaveCompletionHandler) throws -> Kid {
         let context = CoreDataService.sharedCoreDataService.mainQueueContext
         
         let kid = NSEntityDescription.insertNewObjectForNamedEntity(Kid.self, inManagedObjectContext: context)
@@ -44,8 +44,9 @@ class KidService {
         kid.age = age
         kid.height = height
         kid.weight = weight
+        kid.location = location
         
-        let somePicture = picture, somePictureData = UIImageJPEGRepresentation(somePicture, 1.0)
+        if let somePicture = picture, somePictureData = UIImageJPEGRepresentation(somePicture, 1.0){
             if let somePictureEntity = kid.firstPhoto as? Photo {
                 somePictureEntity.data = somePictureData
             }
@@ -54,7 +55,8 @@ class KidService {
                 pictureEntity.data = somePictureData
                 pictureEntity.kidFirst = kid
             }
-       
+        }
+        
         try context.save()
         
         CoreDataService.sharedCoreDataService.saveRootContext(completionHandler)

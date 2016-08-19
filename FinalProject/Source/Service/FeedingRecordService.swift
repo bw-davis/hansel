@@ -38,16 +38,12 @@ class FeedingRecordService {
         let context = CoreDataService.sharedCoreDataService.mainQueueContext
         
         let feedingRecord = NSEntityDescription.insertNewObjectForNamedEntity(FeedingRecord.self, inManagedObjectContext: context)
+        let day = NSEntityDescription.insertNewObjectForNamedEntity(Day.self, inManagedObjectContext: context)
         
-        feedingRecord.timeDate = date
+        day.dateTime = date
         feedingRecord.weight = weight
-       /* if let someNotes = notes {
-            feedingRecord.kid.notes = notes
-        }
-        else {
-            feedingRecord.kid.notes = nil
-        }*/
-        
+       
+        feedingRecord.day = day
         try context.save()
         
         CoreDataService.sharedCoreDataService.saveRootContext(completionHandler)

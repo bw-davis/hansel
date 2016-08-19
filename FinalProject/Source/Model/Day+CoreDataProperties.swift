@@ -15,6 +15,6 @@ import CoreData
 extension Day {
 
     @NSManaged var dateTime: NSDate?
-    @NSManaged var feedingRecords: NSManagedObject?
+    @NSManaged var feedingRecords: NSSet?
 
 }

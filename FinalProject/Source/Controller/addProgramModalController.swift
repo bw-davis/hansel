@@ -35,8 +35,6 @@ class addProgramModalController: UITableViewController, UITextFieldDelegate {
         performSegueWithIdentifier("UnwindSegue", sender: self)
     }
     
-    let caseArray: Array<Program> = [Program.Name, Program.Country]
-   
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -79,22 +77,4 @@ class addProgramModalController: UITableViewController, UITextFieldDelegate {
         return false
     }
     
-    enum Program: CustomStringConvertible{
-        case Name
-        case Country
-        
-        internal var description: String {
-            get {
-                let result: String
-                switch self {
-                case .Name:
-                    result = "Name:"
-                case .Country:
-                    result = "Country:"
-                }
-                return result
-            }
-        }
-        
-    }
 }

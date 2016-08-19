@@ -18,8 +18,10 @@ class addKidModalViewController: UITableViewController, UITextFieldDelegate, UII
     private var weight: Double?
     private var picture: UIImage?
     private var createdKid: Kid?
+    var selectedLocation: Location!
     let caseArray: Array<KidInfo> = [KidInfo.Name, KidInfo.Age, KidInfo.Height, KidInfo.Weight]
     
+    @IBOutlet var addImageLabelOutlet: UILabel!
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var ageTextField: UITextField!
@@ -27,7 +29,7 @@ class addKidModalViewController: UITableViewController, UITextFieldDelegate, UII
     @IBOutlet var weightTextField: UITextField!
     @IBOutlet var imageViewOutlet: UIImageView!
     @IBAction func saveButtonPressed(sender: UIBarButtonItem) {
-        guard let theName = name, let theLastName = lastName, let theAge = age, let theHeight = height, let theWeight = weight, let thePicture = picture else {
+        guard let theName = name, let theLastName = lastName, let theAge = age, let theHeight = height, let theWeight = weight/*, let thePicture = picture*/ else {
             let alertController = UIAlertController(title: "Save Failed", message: "One or more fields are blank.", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) in
                 // Dismiss is automatic
@@ -37,7 +39,12 @@ class addKidModalViewController: UITableViewController, UITextFieldDelegate, UII
         }
         
         do {
-            try createdKid = KidService.sharedKidService.createKid(theName, lastName: theLastName, age: theAge, height: theHeight, weight: theWeight, picture: thePicture){}
+            if let thePicture = picture {
+                try createdKid = KidService.sharedKidService.createKid(theName, lastName: theLastName, age: theAge, height: theHeight, weight: theWeight, picture: thePicture, location: selectedLocation){}
+            }
+            else {
+                try createdKid = KidService.sharedKidService.createKid(theName, lastName: theLastName, age: theAge, height: theHeight, weight: theWeight, picture: nil, location: selectedLocation){}
+            }
         }
         catch let error {
             fatalError("Failed to add Kid: \(error)")
@@ -89,13 +96,15 @@ class addKidModalViewController: UITableViewController, UITextFieldDelegate, UII
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        //nameTextField.becomeFirstResponder()
+        nameTextField.becomeFirstResponder()
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        /*if let somePicture = picture {
+        addImageLabelOutlet.hidden = false
+        if let somePicture = picture {
             imageViewOutlet.image = somePicture
-        }*/
+            addImageLabelOutlet.hidden = true
+        }
         
     }
     override func viewWillDisappear(animated: Bool) {

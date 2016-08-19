@@ -29,12 +29,11 @@
 		F1255E3E1D4ED31300ED074C /* addLocationModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1255E3D1D4ED31300ED074C /* addLocationModalViewController.swift */; };
 		F1255E401D4ED90100ED074C /* kidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1255E3F1D4ED90100ED074C /* kidsViewController.swift */; };
 		F1255E441D4EDF2C00ED074C /* addKidModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1255E431D4EDF2C00ED074C /* addKidModalViewController.swift */; };
+		F168179C1D66243E00EC7964 /* kidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168179B1D66243E00EC7964 /* kidTableViewCell.swift */; };
 		F1A5BB4B1D616EEC001928E0 /* addRecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A5BB4A1D616EEC001928E0 /* addRecordTableViewController.swift */; };
 		F1A5BB4D1D617D3C001928E0 /* FeedingRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A5BB4C1D617D3C001928E0 /* FeedingRecordService.swift */; };
 		F1B4CF431D54EE3D004AE796 /* Example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF411D54EE3D004AE796 /* Example.xcdatamodeld */; };
 		F1B4CF461D54FA42004AE796 /* FeedingProgramService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF451D54FA42004AE796 /* FeedingProgramService.swift */; };
-		F1B4CF491D564C05004AE796 /* addProgramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF481D564C05004AE796 /* addProgramTableViewCell.swift */; };
-		F1B4CF4B1D5677F2004AE796 /* addKidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF4A1D5677F2004AE796 /* addKidTableViewCell.swift */; };
 		F1B4CF581D56807E004AE796 /* Day+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF4C1D56807E004AE796 /* Day+CoreDataProperties.swift */; };
 		F1B4CF591D56807E004AE796 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF4D1D56807E004AE796 /* Day.swift */; };
 		F1B4CF5A1D56807E004AE796 /* FeedingRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF4E1D56807E004AE796 /* FeedingRecord+CoreDataProperties.swift */; };
@@ -134,12 +133,11 @@
 		F1255E3D1D4ED31300ED074C /* addLocationModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addLocationModalViewController.swift; sourceTree = "<group>"; };
 		F1255E3F1D4ED90100ED074C /* kidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kidsViewController.swift; sourceTree = "<group>"; };
 		F1255E431D4EDF2C00ED074C /* addKidModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addKidModalViewController.swift; sourceTree = "<group>"; };
+		F168179B1D66243E00EC7964 /* kidTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kidTableViewCell.swift; sourceTree = "<group>"; };
 		F1A5BB4A1D616EEC001928E0 /* addRecordTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addRecordTableViewController.swift; sourceTree = "<group>"; };
 		F1A5BB4C1D617D3C001928E0 /* FeedingRecordService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingRecordService.swift; sourceTree = "<group>"; };
 		F1B4CF421D54EE3D004AE796 /* Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Example.xcdatamodel; sourceTree = "<group>"; };
 		F1B4CF451D54FA42004AE796 /* FeedingProgramService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingProgramService.swift; sourceTree = "<group>"; };
-		F1B4CF481D564C05004AE796 /* addProgramTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addProgramTableViewCell.swift; sourceTree = "<group>"; };
-		F1B4CF4A1D5677F2004AE796 /* addKidTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addKidTableViewCell.swift; sourceTree = "<group>"; };
 		F1B4CF4C1D56807E004AE796 /* Day+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Day+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F1B4CF4D1D56807E004AE796 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		F1B4CF4E1D56807E004AE796 /* FeedingRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedingRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -392,8 +390,7 @@
 		F1B4CF471D564BB5004AE796 /* CustomSubclasses */ = {
 			isa = PBXGroup;
 			children = (
-				F1B4CF481D564C05004AE796 /* addProgramTableViewCell.swift */,
-				F1B4CF4A1D5677F2004AE796 /* addKidTableViewCell.swift */,
+				F168179B1D66243E00EC7964 /* kidTableViewCell.swift */,
 			);
 			path = CustomSubclasses;
 			sourceTree = "<group>";
@@ -610,7 +607,6 @@
 				F1B4CF5D1D56807E004AE796 /* Photo.swift in Sources */,
 				F1B4CF631D56807E004AE796 /* Location.swift in Sources */,
 				F1B4CF691D57EF8F004AE796 /* AddKidService.swift in Sources */,
-				F1B4CF491D564C05004AE796 /* addProgramTableViewCell.swift in Sources */,
 				F1255E3A1D4EA95300ED074C /* addProgramModalController.swift in Sources */,
 				F1B4CF671D57D6AD004AE796 /* AddLocationService.swift in Sources */,
 				562BB1381B55627000B73F46 /* AppDelegate.swift in Sources */,
@@ -622,11 +618,11 @@
 				F1A5BB4D1D617D3C001928E0 /* FeedingRecordService.swift in Sources */,
 				F1255E401D4ED90100ED074C /* kidsViewController.swift in Sources */,
 				F1B4CF581D56807E004AE796 /* Day+CoreDataProperties.swift in Sources */,
-				F1B4CF4B1D5677F2004AE796 /* addKidTableViewCell.swift in Sources */,
 				F1B4CF601D56807E004AE796 /* FeedingProgram+CoreDataProperties.swift in Sources */,
 				F1255E3C1D4ED18B00ED074C /* locationsViewController.swift in Sources */,
 				56BEFEBE1B68C3E0006F0664 /* Model.xcdatamodeld in Sources */,
 				F1255E3E1D4ED31300ED074C /* addLocationModalViewController.swift in Sources */,
+				F168179C1D66243E00EC7964 /* kidTableViewCell.swift in Sources */,
 				F1B4CF5B1D56807E004AE796 /* FeedingRecord.swift in Sources */,
 				F1B4CF6B1D5AD690004AE796 /* kidDetailViewController.swift in Sources */,
 				F1255E441D4EDF2C00ED074C /* addKidModalViewController.swift in Sources */,

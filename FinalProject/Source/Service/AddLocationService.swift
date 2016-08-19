@@ -31,14 +31,14 @@ class LocationService {
         
     }
     
-    func createLocation(name: String, longitude: Double, latitude: Double/*, feedingProgram: FeedingProgram*/)throws  -> Location {
+    func createLocation(name: String, longitude: Double, latitude: Double, feedingProgram: FeedingProgram)throws  -> Location {
         let context = CoreDataService.sharedCoreDataService.mainQueueContext
         
         let location = NSEntityDescription.insertNewObjectForNamedEntity(Location.self, inManagedObjectContext: context)
         location.name = name
         location.longitude = longitude
         location.latitude = latitude
-        //location.feedingProgram = feedingProgram
+        location.feedingProgram = feedingProgram
         
         try context.save()
         

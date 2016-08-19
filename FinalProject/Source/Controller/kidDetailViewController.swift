@@ -19,6 +19,7 @@ class kidDetailViewController: UITableViewController,  NSFetchedResultsControlle
     @IBOutlet var ageLabelOutlet: UILabel!
     @IBOutlet var heightLabelOutlet: UILabel!
     @IBOutlet var weightLabelOutlet: UILabel!
+    @IBOutlet var notesLabelOutlet: UILabel!
     @IBOutlet var imageViewOutlet: UIImageView!
     @IBOutlet var tableViewOutlet: UITableView!
     
@@ -31,10 +32,17 @@ class kidDetailViewController: UITableViewController,  NSFetchedResultsControlle
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if let someKid = selectedKid {
-            navigationItem.title = "\(someKid.firstName!) \(someKid.lastName)"
+            navigationItem.title = "\(someKid.firstName!) \(someKid.lastName!)"
             ageLabelOutlet.text = "\(someKid.age!)"
             heightLabelOutlet.text = "\(someKid.height!)"
             weightLabelOutlet.text = "\(someKid.weight!)"
+            if let someNotes = selectedKid?.notes {
+                notesLabelOutlet.hidden = false
+                notesLabelOutlet.text = someNotes
+            }
+            else {
+                notesLabelOutlet.hidden = true
+            }
             let picture = someKid.firstPhoto as! Photo
             imageViewOutlet.image = UIImage(data: picture.data!, scale: 1.0)
         }

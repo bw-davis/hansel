@@ -50,6 +50,8 @@ public class CoreDataService {
 
 		let storeRootPath = documentsDirectoryPath.stringByAppendingPathComponent("DataStore") as NSString
 
+        print("Store path: \(storeRootPath)")
+        
 		let fileManager = NSFileManager.defaultManager()
 		if !fileManager.fileExistsAtPath(storeRootPath as String) {
 			do {

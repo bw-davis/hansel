@@ -15,7 +15,7 @@ class FeedingRecord: NSManagedObject, NamedEntity {
 
     class var entityName: String {
         get {
-            return "Location"
+            return "FeedingRecord"
         }
     }
 }
