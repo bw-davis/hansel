@@ -34,16 +34,19 @@ class FeedingRecordService {
         
     }
     
-    func createFeedingRecord(weight: Double, date: NSDate, notes: String?, completionHandler: SaveCompletionHandler) throws -> FeedingRecord {
+    func createFeedingRecord(weight: Double, date: NSDate, notes: String?, kid: Kid, completionHandler: SaveCompletionHandler) throws -> FeedingRecord {
         let context = CoreDataService.sharedCoreDataService.mainQueueContext
         
         let feedingRecord = NSEntityDescription.insertNewObjectForNamedEntity(FeedingRecord.self, inManagedObjectContext: context)
         let day = NSEntityDescription.insertNewObjectForNamedEntity(Day.self, inManagedObjectContext: context)
-        
         day.dateTime = date
+        feedingRecord.location = kid.location
         feedingRecord.weight = weight
-       
+        feedingRecord.timeDate = date
+        kid.weight = weight
+        feedingRecord.kid = kid
         feedingRecord.day = day
+        
         try context.save()
         
         CoreDataService.sharedCoreDataService.saveRootContext(completionHandler)

@@ -30,6 +30,10 @@
 		F1255E401D4ED90100ED074C /* kidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1255E3F1D4ED90100ED074C /* kidsViewController.swift */; };
 		F1255E441D4EDF2C00ED074C /* addKidModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1255E431D4EDF2C00ED074C /* addKidModalViewController.swift */; };
 		F168179C1D66243E00EC7964 /* kidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168179B1D66243E00EC7964 /* kidTableViewCell.swift */; };
+		F19234C71D68E99A007ED2B5 /* FeedingProgramTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19234C61D68E99A007ED2B5 /* FeedingProgramTest.swift */; };
+		F19C959D1D6A18F400049C98 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C959C1D6A18F400049C98 /* LocationTests.swift */; };
+		F19C959F1D6A29CA00049C98 /* KidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C959E1D6A29CA00049C98 /* KidTests.swift */; };
+		F19C95A11D6A387900049C98 /* FeedingRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C95A01D6A387900049C98 /* FeedingRecordTests.swift */; };
 		F1A5BB4B1D616EEC001928E0 /* addRecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A5BB4A1D616EEC001928E0 /* addRecordTableViewController.swift */; };
 		F1A5BB4D1D617D3C001928E0 /* FeedingRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A5BB4C1D617D3C001928E0 /* FeedingRecordService.swift */; };
 		F1B4CF431D54EE3D004AE796 /* Example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1B4CF411D54EE3D004AE796 /* Example.xcdatamodeld */; };
@@ -134,6 +138,10 @@
 		F1255E3F1D4ED90100ED074C /* kidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kidsViewController.swift; sourceTree = "<group>"; };
 		F1255E431D4EDF2C00ED074C /* addKidModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addKidModalViewController.swift; sourceTree = "<group>"; };
 		F168179B1D66243E00EC7964 /* kidTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kidTableViewCell.swift; sourceTree = "<group>"; };
+		F19234C61D68E99A007ED2B5 /* FeedingProgramTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingProgramTest.swift; sourceTree = "<group>"; };
+		F19C959C1D6A18F400049C98 /* LocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
+		F19C959E1D6A29CA00049C98 /* KidTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidTests.swift; sourceTree = "<group>"; };
+		F19C95A01D6A387900049C98 /* FeedingRecordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingRecordTests.swift; sourceTree = "<group>"; };
 		F1A5BB4A1D616EEC001928E0 /* addRecordTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addRecordTableViewController.swift; sourceTree = "<group>"; };
 		F1A5BB4C1D617D3C001928E0 /* FeedingRecordService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingRecordService.swift; sourceTree = "<group>"; };
 		F1B4CF421D54EE3D004AE796 /* Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Example.xcdatamodel; sourceTree = "<group>"; };
@@ -232,6 +240,10 @@
 		562BB14A1B55627000B73F46 /* FinalProjectTests */ = {
 			isa = PBXGroup;
 			children = (
+				F19C95A01D6A387900049C98 /* FeedingRecordTests.swift */,
+				F19C959E1D6A29CA00049C98 /* KidTests.swift */,
+				F19C959C1D6A18F400049C98 /* LocationTests.swift */,
+				F19234C61D68E99A007ED2B5 /* FeedingProgramTest.swift */,
 				562BB14D1B55627000B73F46 /* FinalProjectTests.swift */,
 				562BB14B1B55627000B73F46 /* Supporting Files */,
 			);
@@ -633,7 +645,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F19C959F1D6A29CA00049C98 /* KidTests.swift in Sources */,
+				F19C95A11D6A387900049C98 /* FeedingRecordTests.swift in Sources */,
 				562BB14E1B55627000B73F46 /* FinalProjectTests.swift in Sources */,
+				F19C959D1D6A18F400049C98 /* LocationTests.swift in Sources */,
+				F19234C71D68E99A007ED2B5 /* FeedingProgramTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

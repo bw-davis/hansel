@@ -22,6 +22,7 @@ class addRecordTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet var notesTextFieldOutlet: UITextField!
     
     @IBAction func saveButtonPressed(sender: UIButton) {
+        appendNotes()
         guard let theWeight = weight else {
             let alertController = UIAlertController(title: "Save Failed", message: "The weight field is blank", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) in
@@ -31,33 +32,38 @@ class addRecordTableViewController: UITableViewController, UITextFieldDelegate {
             return
         }
         do {
-            try createdRecord = FeedingRecordService.sharedFeedingRecordService.createFeedingRecord(theWeight, date: date, notes: notes){}
+            try createdRecord = FeedingRecordService.sharedFeedingRecordService.createFeedingRecord(theWeight, date: date, notes: notes, kid: selectedKid!){}
             
-            selectedKid?.weight = createdRecord?.weight
-            createdRecord?.kid = selectedKid
-            createdRecord?.location = selectedKid?.location
         }
         catch let error {
             fatalError("Failed to add Record: \(error)")
         }
-        appendNotes()
+        
         
         performSegueWithIdentifier("RecordUnwindSegue", sender: self)
     }
-    func appendNotes(){
+    private func appendNotes(){
         if let someKid = selectedKid {
             if let someNotes = notes {
+                //let theDay = createdRecord?.day as! Day
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateStyle = .MediumStyle
+                dateFormatter.timeStyle = .NoStyle
+                let someDate = dateFormatter.stringFromDate(date)
                 if someKid.notes == nil {
-                    someKid.notes = "-" + someNotes + "\n"
+                    someKid.notes = someDate + ": " + someNotes + "\n"
+                    //someKid.notes = "-\(theDay.dateTime!): " + someNotes + "\n"
                 }
                 else {
-                    someKid.notes? += "-" + someNotes + "\n"
+                    someKid.notes? += someDate + ": " + someNotes + "\n"
+                    //someKid.notes? += "-\(theDay.dateTime!): " + someNotes + "\n"
                 }
             }
             else {
                 someKid.notes = nil
             }
         }
+        //CoreDataService.sharedCoreDataService.saveRootContext({})
     }
     required init!(coder aDecoder: NSCoder) {
         let now = NSDate()

@@ -10,6 +10,7 @@
         <relationship name="locations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Location" inverseName="feedingProgram" inverseEntity="Location" syncable="YES"/>
     </entity>
     <entity name="FeedingRecord" representedClassName=".FeedingRecord" syncable="YES">
+        <attribute name="timeDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="feedingRecords" inverseEntity="Day" syncable="YES"/>
         <relationship name="kid" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Kid" inverseName="feedingRecord" inverseEntity="Kid" syncable="YES"/>
@@ -45,7 +46,7 @@
     <elements>
         <element name="Day" positionX="-18" positionY="27" width="128" height="75"/>
         <element name="FeedingProgram" positionX="-36" positionY="18" width="128" height="90"/>
-        <element name="FeedingRecord" positionX="0" positionY="36" width="128" height="120"/>
+        <element name="FeedingRecord" positionX="0" positionY="36" width="128" height="135"/>
         <element name="Kid" positionX="-54" positionY="-45" width="128" height="195"/>
         <element name="Location" positionX="-63" positionY="-45" width="128" height="135"/>
         <element name="Photo" positionX="18" positionY="54" width="128" height="105"/>

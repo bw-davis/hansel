@@ -15,6 +15,7 @@ import CoreData
 extension FeedingRecord {
 
     @NSManaged var weight: NSNumber?
+    @NSManaged var timeDate: NSDate?
     @NSManaged var day: NSManagedObject?
     @NSManaged var kid: NSManagedObject?
     @NSManaged var location: NSManagedObject?

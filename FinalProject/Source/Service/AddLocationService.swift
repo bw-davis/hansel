@@ -11,11 +11,15 @@ import CoreData
 import CoreDataService
 
 class LocationService {
+    
     static let sharedLocationService = LocationService()
     
-    func fetchedResultsControllerForLocationWithDelegate(delegate: NSFetchedResultsControllerDelegate?, feedingProgram: FeedingProgram) -> NSFetchedResultsController? {
+    func fetchedResultsControllerForLocationWithDelegate(delegate: NSFetchedResultsControllerDelegate?, feedingProgram: FeedingProgram?) -> NSFetchedResultsController? {
         let fetchRequest = NSFetchRequest(namedEntity: Location.self)
-        fetchRequest.predicate = NSPredicate(format: "feedingProgram == %@", feedingProgram)
+        if let someFeedingProgram = feedingProgram {
+            fetchRequest.predicate = NSPredicate(format: "feedingProgram == %@", someFeedingProgram)
+        }
+        
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         var resultsController: NSFetchedResultsController? = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataService.sharedCoreDataService.mainQueueContext, sectionNameKeyPath: nil, cacheName: nil)
         

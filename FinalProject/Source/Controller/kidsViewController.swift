@@ -55,8 +55,10 @@ class kidsViewController: UIViewController, UITableViewDataSource, NSFetchedResu
         
         let kid = fetchedResultsController?.objectAtIndexPath(indexPath) as! Kid
         cell.kidNameLabelOutlet?.text = " \(kid.firstName!)  \(kid.lastName!)"
-        let picture = kid.firstPhoto as! Photo
-        cell.kidImageOutlet?.image = UIImage(data: picture.data!, scale: 1.0)
+        if let somePicture = kid.firstPhoto as? Photo {
+            cell.kidImageOutlet?.image = UIImage(data: somePicture.data!, scale: 1.0)
+        }
+        
         
         return cell
     }

@@ -70,6 +70,7 @@ class addProgramModalController: UITableViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == nameTextField {
             nameTextField.resignFirstResponder()
+            countryTextField.becomeFirstResponder()
         }
         else {
             countryTextField.resignFirstResponder()

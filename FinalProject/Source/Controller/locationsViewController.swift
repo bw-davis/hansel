@@ -29,14 +29,14 @@ class locationsViewController: UIViewController, UITableViewDataSource, NSFetche
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        /*if let feedingProgram = selectedFeedingProgram {
+        if let feedingProgram = selectedFeedingProgram {
             navigationItem.title = "\(feedingProgram.name!) Locations"
             if let location = createdLocation {
                 print("The Locations name is: \(createdLocation?.name)")
                 print("The Feeding Programs name is: \(selectedFeedingProgram!.name)")
                 location.feedingProgram = feedingProgram
             }
-        }*/
+        }
         if let selectedIndexPath = tableViewOutlet.indexPathForSelectedRow {
             tableViewOutlet.deselectRowAtIndexPath(selectedIndexPath, animated: false)
         }

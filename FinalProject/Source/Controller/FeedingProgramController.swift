@@ -36,7 +36,6 @@ class FeedingProgramController: UIViewController, UITableViewDataSource, NSFetch
         
         let program = fetchedResultsController?.objectAtIndexPath(indexPath) as! FeedingProgram
         cell.textLabel?.text = program.name
-        
         return cell
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

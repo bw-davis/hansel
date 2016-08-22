@@ -19,7 +19,7 @@ class kidDetailViewController: UITableViewController,  NSFetchedResultsControlle
     @IBOutlet var ageLabelOutlet: UILabel!
     @IBOutlet var heightLabelOutlet: UILabel!
     @IBOutlet var weightLabelOutlet: UILabel!
-    @IBOutlet var notesLabelOutlet: UILabel!
+    @IBOutlet var notesLabelOutlet: UITextView!
     @IBOutlet var imageViewOutlet: UIImageView!
     @IBOutlet var tableViewOutlet: UITableView!
     
@@ -35,7 +35,8 @@ class kidDetailViewController: UITableViewController,  NSFetchedResultsControlle
             navigationItem.title = "\(someKid.firstName!) \(someKid.lastName!)"
             ageLabelOutlet.text = "\(someKid.age!)"
             heightLabelOutlet.text = "\(someKid.height!)"
-            weightLabelOutlet.text = "\(someKid.weight!)"
+            weightLabelOutlet.text = "\(Double(someKid.weight!))"
+            
             if let someNotes = selectedKid?.notes {
                 notesLabelOutlet.hidden = false
                 notesLabelOutlet.text = someNotes
@@ -43,13 +44,15 @@ class kidDetailViewController: UITableViewController,  NSFetchedResultsControlle
             else {
                 notesLabelOutlet.hidden = true
             }
-            let picture = someKid.firstPhoto as! Photo
-            imageViewOutlet.image = UIImage(data: picture.data!, scale: 1.0)
+            if let picture = someKid.firstPhoto as? Photo {
+                imageViewOutlet.image = UIImage(data: picture.data!, scale: 1.0)
+            }
         }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "AddRecordSegue" {
-            let recordViewController = segue.destinationViewController as! addRecordTableViewController
+            let navViewController = segue.destinationViewController as! UINavigationController
+            let recordViewController = navViewController.topViewController as! addRecordTableViewController
             recordViewController.selectedKid = selectedKid
         }
     }

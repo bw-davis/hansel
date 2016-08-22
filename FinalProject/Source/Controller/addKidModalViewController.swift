@@ -18,16 +18,18 @@ class addKidModalViewController: UITableViewController, UITextFieldDelegate, UII
     private var weight: Double?
     private var picture: UIImage?
     private var createdKid: Kid?
+    
     var selectedLocation: Location!
-    let caseArray: Array<KidInfo> = [KidInfo.Name, KidInfo.Age, KidInfo.Height, KidInfo.Weight]
     
     @IBOutlet var addImageLabelOutlet: UILabel!
+    @IBOutlet var addImageButtonOutlet: UIButton!
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var ageTextField: UITextField!
     @IBOutlet var heightTextField: UITextField!
     @IBOutlet var weightTextField: UITextField!
     @IBOutlet var imageViewOutlet: UIImageView!
+    
     @IBAction func saveButtonPressed(sender: UIBarButtonItem) {
         guard let theName = name, let theLastName = lastName, let theAge = age, let theHeight = height, let theWeight = weight/*, let thePicture = picture*/ else {
             let alertController = UIAlertController(title: "Save Failed", message: "One or more fields are blank.", preferredStyle: .Alert)
@@ -37,17 +39,21 @@ class addKidModalViewController: UITableViewController, UITextFieldDelegate, UII
             self.presentViewController(alertController, animated: true, completion: nil)
             return
         }
-        
-        do {
-            if let thePicture = picture {
+        if let thePicture = picture {
+            do {
                 try createdKid = KidService.sharedKidService.createKid(theName, lastName: theLastName, age: theAge, height: theHeight, weight: theWeight, picture: thePicture, location: selectedLocation){}
             }
-            else {
-                try createdKid = KidService.sharedKidService.createKid(theName, lastName: theLastName, age: theAge, height: theHeight, weight: theWeight, picture: nil, location: selectedLocation){}
+            catch let error {
+                fatalError("Failed to add Kid: \(error)")
             }
         }
-        catch let error {
-            fatalError("Failed to add Kid: \(error)")
+        else {
+            do {
+                try createdKid = KidService.sharedKidService.createKid(theName, lastName: theLastName, age: theAge, height: theHeight, weight: theWeight, picture: nil, location: selectedLocation){}
+            }
+            catch let error {
+                fatalError("Failed to add Kid: \(error)")
+            }
         }
         performSegueWithIdentifier("KidUnwindSegue", sender: self)
     }
@@ -93,23 +99,6 @@ class addKidModalViewController: UITableViewController, UITextFieldDelegate, UII
     }
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
-    }
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        nameTextField.becomeFirstResponder()
-    }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        addImageLabelOutlet.hidden = false
-        if let somePicture = picture {
-            imageViewOutlet.image = somePicture
-            addImageLabelOutlet.hidden = true
-        }
-        
-    }
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
@@ -170,14 +159,21 @@ class addKidModalViewController: UITableViewController, UITextFieldDelegate, UII
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == nameTextField {
             nameTextField.resignFirstResponder()
+            lastNameTextField.becomeFirstResponder()
+        }
+        else if textField == lastNameTextField {
+            lastNameTextField.resignFirstResponder()
+            ageTextField.becomeFirstResponder()
         }
         else if textField == ageTextField {
             ageTextField.resignFirstResponder()
+            heightTextField.becomeFirstResponder()
         }
         else if textField == heightTextField {
             heightTextField.resignFirstResponder()
+            weightTextField.becomeFirstResponder()
         }
-        else {
+        else if textField ==  weightTextField {
             weightTextField.resignFirstResponder()
         }
         return false
@@ -188,27 +184,17 @@ class addKidModalViewController: UITableViewController, UITextFieldDelegate, UII
             kidListViewController.createdKid = createdKid
         }
     }
-    enum KidInfo: CustomStringConvertible{
-        case Name
-        case Age
-        case Height
-        case Weight
-        
-        internal var description: String {
-            get {
-                let result: String
-                switch self {
-                case .Age:
-                    result = "Age:"
-                case .Height:
-                    result = "Height:"
-                case .Name:
-                    result = "Name:"
-                case .Weight:
-                    result = "Weight:"
-                }
-                return result
-            }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        addImageLabelOutlet.hidden = false
+        if let somePicture = picture {
+            imageViewOutlet.image = somePicture
+            addImageLabelOutlet.hidden = true
+            addImageButtonOutlet.hidden = true
         }
+        
     }
 }

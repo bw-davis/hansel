@@ -11,8 +11,7 @@ import CoreData
 import CoreDataService
 
 class FeedingProgramService {
-    //private var name: String?
-    private var locations: NSSet?
+    
     static let sharedProgramService = FeedingProgramService()
     
     
@@ -33,7 +32,7 @@ class FeedingProgramService {
         
     }
     
-    func createFeedingProgram(name: String, country: String) throws {
+    func createFeedingProgram(name: String, country: String) throws -> FeedingProgram {
         let context = CoreDataService.sharedCoreDataService.mainQueueContext
         
         let program = NSEntityDescription.insertNewObjectForNamedEntity(FeedingProgram.self, inManagedObjectContext: context)
@@ -43,18 +42,9 @@ class FeedingProgramService {
         try context.save()
         
         CoreDataService.sharedCoreDataService.saveRootContext({})
+        return program
     }
     private init(){
         
-    }
-    private func countOfPrograms() -> Int {
-        let fetchRequest = NSFetchRequest(namedEntity: FeedingProgram.self)
-        let coreDataService = CoreDataService.sharedCoreDataService
-        let count = coreDataService.mainQueueContext.countForFetchRequest(fetchRequest, error: nil)
-        guard count != NSNotFound else {
-            fatalError("Could not count Pokeman in database")
-        }
-        
-        return count
     }
 }

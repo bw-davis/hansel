@@ -57,6 +57,7 @@ class addLocationsModalViewController: UIViewController, MKMapViewDelegate, NSFe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameTextFieldOutlet.becomeFirstResponder()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -130,6 +131,11 @@ class addLocationsModalViewController: UIViewController, MKMapViewDelegate, NSFe
             let locationListViewController = segue.destinationViewController as! locationsViewController
             locationListViewController.createdLocation = createdLocation
         }
-        
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == nameTextFieldOutlet {
+            nameTextFieldOutlet.resignFirstResponder()
+        }
+        return false
     }
 }

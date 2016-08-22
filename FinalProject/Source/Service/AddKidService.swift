@@ -39,8 +39,8 @@ class KidService {
         
         let kid = NSEntityDescription.insertNewObjectForNamedEntity(Kid.self, inManagedObjectContext: context)
         
-        kid.firstName = name
-        kid.lastName = lastName
+        kid.firstName = name.capitalizedString
+        kid.lastName = lastName.capitalizedString
         kid.age = age
         kid.height = height
         kid.weight = weight
