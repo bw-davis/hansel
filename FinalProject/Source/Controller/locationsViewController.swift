@@ -24,8 +24,6 @@ class locationsViewController: UIViewController, UITableViewDataSource, NSFetche
         super.viewDidLoad()
         
         setupResultsController()
-       
-        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
