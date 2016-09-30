@@ -30,6 +30,9 @@ class kidsViewController: UIViewController, UITableViewDataSource, NSFetchedResu
         if let selectedIndexPath = tableViewOutlet.indexPathForSelectedRow {
             tableViewOutlet.deselectRowAtIndexPath(selectedIndexPath, animated: false)
         }
+        if let someLocation = selectedLocation {
+            navigationItem.title = "\(someLocation.name!) kids"
+        }
     }
     private func setupResultsController() {
         if let someLocation = selectedLocation, let resultsController = KidService.sharedKidService.fetchedResultsControllerForKidsWithDelegate(self, location: someLocation) {
