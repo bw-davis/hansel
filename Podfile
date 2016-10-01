@@ -21,7 +21,9 @@ target 'FinalProject' do
 
   # Pods for FinalProject
   pod 'Firebase'
+  pod 'Firebase/Database'
   pod 'Google/SignIn'
+  
 
   target 'FinalProjectTests' do
     inherit! :search_paths
