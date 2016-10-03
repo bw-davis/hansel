@@ -1,12 +1,3 @@
-//
-//  AppDelegate.swift
-//  FinalProject
-//
-//  Created by Charles Augustine.
-//
-//
-
-
 import UIKit
 
 
