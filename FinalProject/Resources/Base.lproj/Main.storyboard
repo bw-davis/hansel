@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cNe-xy-YSW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="d69-No-5Ru">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="JeS-oR-uoZ">
+            <objects>
+                <viewController id="d69-No-5Ru" customClass="loginViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6hC-Cz-kVS"/>
+                        <viewControllerLayoutGuide type="bottom" id="dQa-xV-Kb1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GuP-SJ-55J">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default-iPhone6.png" translatesAutoresizingMaskIntoConstraints="NO" id="kgc-6O-sGB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kgc-6O-sGB" secondAttribute="trailing" id="2Fi-dh-bRV"/>
+                            <constraint firstAttribute="bottom" secondItem="kgc-6O-sGB" secondAttribute="bottom" id="dGb-B0-GZo"/>
+                            <constraint firstItem="kgc-6O-sGB" firstAttribute="top" secondItem="GuP-SJ-55J" secondAttribute="top" id="lOT-Ke-11l"/>
+                            <constraint firstItem="kgc-6O-sGB" firstAttribute="leading" secondItem="GuP-SJ-55J" secondAttribute="leading" id="mDe-yA-iL5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="cNe-xy-YSW" kind="show" identifier="showFirstScreen" id="Upe-3B-T3F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RKL-IS-itO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-515" y="-658"/>
+        </scene>
         <!--FeedingProgramNavController-->
         <scene sceneID="NCp-mX-3jh">
             <objects>
@@ -1204,4 +1236,7 @@
             <point key="canvasLocation" x="1228" y="726"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Default-iPhone6.png" width="750" height="1334"/>
+    </resources>
 </document>

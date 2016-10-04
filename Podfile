@@ -15,15 +15,10 @@ target 'CoreDataService' do
 end
 
 target 'FinalProject' do
-
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for FinalProject
-  pod 'Firebase'
-  pod 'Firebase/Database'
-  pod 'Google/SignIn'
-  
 
   target 'FinalProjectTests' do
     inherit! :search_paths
