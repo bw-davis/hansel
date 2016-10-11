@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -17,32 +16,40 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+<<<<<<< HEAD
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sde-vf-1W2">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="460"/>
+=======
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default-iPhone6.png" translatesAutoresizingMaskIntoConstraints="NO" id="tva-Kg-x8K">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+>>>>>>> 6c815ba2376e624c64a2ab716fee44e716fc29bb
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hansel" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="13" y="74" width="441" height="43"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="1" id="5cJ-9S-tgC"/>
-                <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
+                <constraint firstItem="tva-Kg-x8K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="06k-9F-ttd"/>
+                <constraint firstAttribute="trailing" secondItem="tva-Kg-x8K" secondAttribute="trailing" id="2VJ-SP-543"/>
+                <constraint firstAttribute="bottom" secondItem="tva-Kg-x8K" secondAttribute="bottom" id="B1Q-DZ-Soe"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstAttribute="trailing" secondItem="sde-vf-1W2" secondAttribute="trailing" id="MWe-8S-2CD"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstItem="sde-vf-1W2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Y98-le-e9o"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
-                <constraint firstItem="sde-vf-1W2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jtQ-TV-WLM"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="top" secondItem="sde-vf-1W2" secondAttribute="bottom" id="v8P-eg-hc0"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="top" secondItem="tva-Kg-x8K" secondAttribute="bottom" id="kSA-Es-los"/>
+                <constraint firstItem="tva-Kg-x8K" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="uL5-Vy-GXH"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="kSA-Es-los"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+<<<<<<< HEAD
+=======
+    <resources>
+        <image name="Default-iPhone6.png" width="750" height="1334"/>
+    </resources>
+>>>>>>> 6c815ba2376e624c64a2ab716fee44e716fc29bb
 </document>

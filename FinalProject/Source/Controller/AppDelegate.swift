@@ -1,14 +1,4 @@
-//
-//  AppDelegate.swift
-//  FinalProject
-//
-//  Created by Charles Augustine.
-//
-//
-
-
 import UIKit
-import Firebase
 
 
 @UIApplicationMain
@@ -18,22 +8,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 	func application(application: UIApplication,
 	                 didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        FIRApp.configure()
         
-// start test code
+        let string = "https://lumaa.co/api/feedingprogram/"
+        let url = NSURL(string: string)
+        let request = NSMutableURLRequest(URL: url!)
+        request.setValue("Token <YOURTOKENHERE>", forHTTPHeaderField: "Authorization")
+        request.HTTPMethod = "GET"
+        let session = NSURLSession.sharedSession()
         
-                let myRootRef = FIRDatabase.database().reference()
-
-                // Write data to Firebase
-                myRootRef.setValue("Hi from Nathan :) I just set some data in the backend.")
-                
-                // Read data and react to changes
-                myRootRef.observeEventType(.Value, withBlock: {
-                    snapshot in
-                    print("\(snapshot.key) -> \(snapshot.value)")
-                })
-        //        end test code
-        
+        let tache = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            if let antwort = response as? NSHTTPURLResponse {
+                let code = antwort.statusCode
+                print(code)
+            }
+        }
+        tache.resume()
         
         
 		return true
